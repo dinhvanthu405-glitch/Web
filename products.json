@@ -53,5 +53,50 @@
     "img": "images/A11.jpg",
     "size": "Mã 11",
     "category": "tranh80x28"
+  },
+  {
+    "img": "images/B1.jpg",
+    "size": "Mã B1",
+    "category": "tranh120x70"
+  },
+  {
+    "img": "images/B2.jpg",
+    "size": "Mã B2",
+    "category": "tranh120x70"
+  },
+  {
+    "img": "images/B3.jpg",
+    "size": "Mã B3",
+    "category": "tranh120x70"
+  },
+  {
+    "img": "images/B4.jpg",
+    "size": "Mã B4",
+    "category": "tranh120x70"
+  },
+  {
+    "img": "images/B5.jpg",
+    "size": "Mã B5",
+    "category": "tranh120x70"
+  },
+  {
+    "img": "images/B6.jpg",
+    "size": "Mã B6",
+    "category": "tranh120x70"
+  },
+  {
+    "img": "images/B7.jpg",
+    "size": "Mã B7",
+    "category": "tranh120x70"
+  },
+  {
+    "img": "images/B8.jpg",
+    "size": "Mã B8",
+    "category": "tranh120x70"
+  },
+  {
+    "img": "images/B9.jpg",
+    "size": "Mã B9",
+    "category": "tranh120x70"
   }
 ]
