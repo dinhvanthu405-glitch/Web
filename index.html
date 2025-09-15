@@ -3,197 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gốm Sứ Cao Cấp</title>
+<title> Gốm Sứ Trung Quốc </title>
 <style>
-  /* Reset cơ bản */
-  * { margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif; }
-
-  /* Header nhẹ nhàng + shadow khi scroll */
-  header { 
-    background:#f9f9f9; 
-    color:#333;
-    display:flex; 
-    justify-content:center; 
-    align-items:center; 
-    padding:25px 20px; 
-    flex-direction:column;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:100;
-    transition: box-shadow 0.3s;
-  }
-  header.scrolled { box-shadow:0 4px 15px rgba(0,0,0,0.1); }
-
-  header .logo { 
-    font-size:28px; font-weight:bold; margin-bottom:8px; color:#444;
-  }
-  header .contact-info p { margin:3px 0; font-size:16px; }
-  header .contact-info a { color:#ff6600; text-decoration:none; }
-  header .contact-info a:hover { color:#e65c00; }
-
-  /* Banner gradient dịu */
-  .banner { 
-    background: linear-gradient(135deg, #fff7f0, #ffeeda);
-    color:#333; 
-    text-align:center; 
-    padding:100px 20px; 
-    border-radius:0 0 50px 50px;
-  }
-  .banner h1 { font-size:38px; margin-bottom:12px; }
-  .banner p { font-size:18px; color:#666; }
-
-  /* Sản phẩm */
-  #products { padding:60px 20px; text-align:center; background:#fcfcfc; }
-  #products h2 { font-size:28px; margin-bottom:40px; color:#333; }
-
-  .product-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
-  .product-card { 
-    background:#fff; border:1px solid #eee; border-radius:12px; padding:15px; 
-    box-shadow:0 2px 5px rgba(0,0,0,0.08); 
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .product-card:hover { 
-    transform: translateY(-10px); 
-    box-shadow:0 12px 25px rgba(0,0,0,0.15);
-  }
-  .product-card img { max-width:100%; border-radius:10px; margin-bottom:12px; transition: transform 0.3s; }
-  .product-card img:hover { transform: scale(1.05); }
-  .product-card h3 { font-size:20px; margin:10px 0 6px; color:#444; }
-  .product-card p { color:#555; margin:4px 0; font-size:15px; }
-  .product-card .price { color:#e60000; font-weight:bold; margin-top:6px; }
-  .buy-button { 
-    display:inline-block; margin-top:10px; padding:8px 18px; background:#ff6600; 
-    color:#fff; text-decoration:none; border-radius:5px; font-weight:bold; transition: background 0.2s, transform 0.2s;
-  }
-  .buy-button:hover { background:#e65c00; transform: scale(1.05); }
-
-  /* Footer */
-  footer { background:#f9f9f9; color:#333; text-align:center; padding:25px; border-top:1px solid #ddd; }
-  footer a { color:#ff6600; text-decoration:none; }
-  footer a:hover { color:#e65c00; }
-
-  /* Floating buttons */
-  .floating-buttons { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; }
-  .floating-buttons a { width:50px; height:50px; background:#ff6600; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:50%; text-decoration:none; font-size:22px; box-shadow:0 2px 5px rgba(0,0,0,0.3); transition: background 0.2s, transform 0.2s; }
-  .floating-buttons a:hover { background:#e65c00; transform: scale(1.1); }
-
-  /* Responsive nhẹ */
-  @media(max-width:500px){
-    .banner h1{font-size:28px;}
-    .banner p{font-size:16px;}
-    header .logo{font-size:24px;}
-  }
+body {
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:#f9f9f9;
+  margin:0;
+  padding:0;
+  color:#333;
+}
+.topbar {
+  background:linear-gradient(90deg,#d0ebff,#fefefe);
+  text-align:center;
+  padding:16px;
+  font-size:20px;
+  font-weight:bold;
+  color:#2c3e50;
+  border-bottom:1px solid #ddd;
+}
+.topbar span {
+  display:block;
+  font-size:14px;
+  font-weight:normal;
+  margin-top:4px;
+  color:#555;
+}
+header {
+  background:#fff;
+  padding:12px;
+  box-shadow:0 1px 5px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.menu {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+}
+.menu button {
+  padding:6px 12px;
+  border:none;
+  background:#eef5ff;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:13px;
+  color:#34495e;
+  transition:all 0.3s;
+}
+.menu button:hover {
+  background:#dbe8ff;
+}
+.menu button.active {
+  background:#4a90e2;
+  color:#fff;
+  font-weight:bold;
+  box-shadow:0 2px 5px rgba(0,0,0,0.15);
+}
+.products {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:18px;
+  padding:18px;
+}
+.product {
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.product:hover {
+  transform:translateY(-4px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.product img {
+  max-width: 100%;
+  height: auto;         /* Giữ chiều cao theo tỉ lệ ảnh */
+  border-radius: 10px;
+}
+.product h2 {
+  font-size:17px;
+  margin:8px 0 4px;
+  color:#2c3e50;
+}
+.size {
+  font-size:13px;
+  color:#666;
+  margin-bottom:4px;
+}
+.price {
+  font-size:15px;
+  font-weight:bold;
+  color:#d9534f;
+  margin-bottom:6px;
+}
+.desc {
+  font-size:13px;
+  color:#777;
+  margin-bottom:8px;
+}
+.contact {
+  display:inline-block;
+  padding:6px 10px;
+  background:#5cb85c;
+  color:#fff;
+  border-radius:20px;
+  text-decoration:none;
+  transition:background 0.3s;
+  font-size:13px;
+}
+.contact:hover {
+  background:#4cae4c;
+}
+.floating-buttons {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:2000;
+}
+.floating-buttons a {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  color:#fff;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 3px 8px rgba(0,0,0,0.2);
+  transition:transform 0.3s, background 0.3s;
+}
+.call-btn {
+  background:#28a745;
+}
+.call-btn:hover {
+  background:#218838;
+  transform:scale(1.1);
+}
+.zalo-btn {
+  background:#0077ff;
+}
+.zalo-btn:hover {
+  background:#005fcc;
+  transform:scale(1.1);
+}
 </style>
 </head>
 <body>
 
-<!-- Header -->
+<div class="topbar">
+  🏺 Gốm Sứ Trung Quốc
+  <span>Liên hệ: 0816658163</span>
+</div>
+
 <header>
-  <div class="logo">🏺 Gốm Sứ Cao Cấp</div>
-  <div class="contact-info">
-    <p>📍 Nam Định, Hà Nội</p>
-    <p>📞 <a href="tel:0816658163">0816 658 163</a></p>
+  <div class="menu" id="menu">
+    <button class="active" onclick="filterProducts('all', this)">Tất cả</button>
+    <button onclick="filterProducts('tuong', this)">Tượng</button>
+    <button onclick="filterProducts('tamda', this)">Tam Đa</button>
+    <button onclick="filterProducts('tranh2x11', this)">Tranh 2m x 1.1m</button>
+    <button onclick="filterProducts('tranh86x46', this)">Tranh 86cm x 46cm</button>
+    <button onclick="filterProducts('tranh80x28', this)">Tranh 80cm x 28cm</button>
+    <button onclick="filterProducts('tranh120x70', this)">Tranh 120cm x 70cm</button>
+    <button onclick="filterProducts('tranh233x133', this)">Tranh 2m33 x 1m33</button>
+    <button onclick="filterProducts('lucbinh', this)">Lục Bình</button>
+    <button onclick="filterProducts('choe', this)">Chóe</button>
+    <button onclick="filterProducts('hutloc', this)">Hút Lộc</button>
+    <button onclick="filterProducts('thong', this)">Thống</button>
+    <button onclick="filterProducts('dia', this)">Đĩa</button>
+    <button onclick="filterProducts('ktcao', this)">Đồ Kĩ Thuật Cao Cấp</button>
+    <button onclick="filterProducts('ang', this)">Ang</button>
+    <button onclick="filterProducts('bi', this)">Bí</button>
+    <button onclick="filterProducts('toi', this)">Tỏi</button>
   </div>
 </header>
 
-<!-- Banner -->
-<section class="banner">
-  <h1>Bộ Sưu Tập Gốm Sứ Cao Cấp</h1>
-  <p>Tinh hoa thủ công – Sang trọng – Đẳng cấp</p>
-</section>
+<div class="products" id="product-list"></div>
 
-<!-- Sản phẩm -->
-<section id="products">
-  <h2>Sản phẩm nổi bật</h2>
-  <div class="product-grid">
-    <!-- JavaScript sẽ thêm sản phẩm -->
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>📍 Địa chỉ: Nam Định, Hà Nội</p>
-  <p>📞 Hotline: <a href="tel:0816658163">0816 658 163</a></p>
-  <p>© 2025 Gốm Sứ Cao Cấp</p>
-</footer>
-
-<!-- Nút liên hệ nổi -->
 <div class="floating-buttons">
-  <a href="tel:0816658163" class="call">📞</a>
-  <a href="https://zalo.me/0816658163" target="_blank" class="zalo">💬</a>
-  <a href="https://m.me/username" target="_blank" class="messenger">📱</a>
+  <a href="tel:0816658163" class="call-btn">📞</a>
+  <a href="https://zalo.me/0816658163" class="zalo-btn">💬</a>
 </div>
 
-<!-- Script thêm sản phẩm -->
 <script>
-  const products = [
-    //{ img:'images/3.jpg', name:'Bình gốm họa tiết', size:'Cao 50cm, rộng 30cm', price:'5,000,000đ' },
-    //{ img:'images/1.jpg', name:'Tượng gốm nghệ thuật', size:'Cao 80cm, rộng 40cm', price:'8,000,000đ' },
-    //{ img:"images/3.jpg", name:'Bộ ấm chén gốm', size:'2 bình ấm 20cm, 6 chén 5cm', price:'2,500,000đ' },
-    { img:'images/M1.jpg', name:'Chậu Vuông ', size:'M1 cao :12cm ngang 12.5cm', price:'2,800,000đ' },
-    { img:'images/M2.jpg', name:'Đôi Tu Hú', size:'2 M2 cao 23cm', price:'4,500,000đ' },
-    { img:'images/M4.jpg', name:'Ống Bút', size:'M4 cao 16cm ngang 13cm ', price:'2,500,000đ' },
-    { img:'images/M3.jpg', name:'Đĩa Ngỗng', size:'M3 Dk 20cm', price:'2,800,000đ' },
-    { img:'images/M10.jpg', name:'Hút Lộc ', size:'M3 cao 35cm', price:'3,200,000đ' },
-    { img:'images/M6.jpg', name:'Tranh Tứ cảnh', size:'M6 cao 35 ngang 25cm', price:'4,500,000đ' },
-    { img:'images/M7.jpg', name:'Bộ Tam Đa ', size:'M7 cao 85cm', price:'40,500,000đ' },
-    { img:'images/M8.jpg', name:' Đôi Bình Kì Lân', size:'M8 cao 50cm', price:'5,500,000đ' },
-    { img:'images/M9.jpg', name:'Gia Cát Lượng', size:'M9 cao 72cm', price:'5,500,000đ' },
-    { img:'images/M5.jpg', name:'Tranh tứ Cảnh', size:'M5 cao 150cmx36cm', price:'12,500,000đ' },
-    { img:'images/M11.jpeg', name:' Thống Bát Tiên', size:'M11 cao 45cm dk 45cm', price:'9,500,000đ' },
-    { img:'images/M12.jpeg', name:' Thống Quần Tiên', size:'M 12 cao 40 dk 40', price:'6,500,000đ' },
-    { img:'images/M13.jpg', name:'Chóe Quần Tiên', size:'M13 Cao 1m2 vb 170cm', price:'23,500,000đ' },
-    { img:'images/M14.jpg', name:' Lục Bình ', size:'M14 cao :1m4', price:'12,800,000đ' },
-    { img:'images/M15.jpg', name:'Tế Công', size:'M15 cao 50cm', price:'5,500,000đ' },
-    { img:'images/M16.jpg', name:'Di-lặc đứng', size:'M16 cao 75cm', price:'15,000,000đ' },
-    { img:'images/M17.jpg', name:'Bộ Tam Đa', size:'M17 cao 68cm', price:'17,000,000đ' },
-    { img:'images/M18.jpg', name:'Lục Bình', size:'M17 1m8', price:'32,000,000đ' },
-    { img:'images/M19.jpg', name:'Quan Vũ', size:'M18 cao 50cm', price:'6,500,000đ' },
-    { img:'images/M20.jpg', name:'Tranh Chim Sen', size:'M20 86x46cm', price:'1,400,000đ' },
-    { img:'images/M21.jpg', name:'Bộ Tam Sự', size:'M21', price:'8,600,000đ' },
-    { img:'images/M23.jpg', name:'Ống Bút', size:'M23 cao 14cm', price:'2,500,000đ' },
-    { img:'images/M25.jpg', name:'Bộ Tam Đa Mini', size:'M25 cao 50cm', price:'22,000,000đ' },
-    { img:'images/M28.jpg', name:'Bộ Tam Đa', size:'M28 cao 50cm', price:'12,500,000đ' },
-    { img:'images/M29.jpg', name:'Lục Bình', size:'M29 cao 2m2', price:'120,000,000đ' },
-    { img:'images/M30.jpeg', name:'Di Lặc', size:'M30 cao 50cm', price:'8,500,000đ' },
-    { img:'images/M31.jpg', name:'Bộ Tam Đa', size:'M31 cao 73cm', price:'30,000,000đ' },
-    { img:'images/M32.jpeg', name:'Bộ Tam Đa', size:'M32 cao 75cm', price:'19,000,000đ' },
-    { img:'images/M33.jpg', name:'Tranh Sơn Thủy', size:'M33 2m33 x 1m33', price:'32,000,000đ' },
-    { img:'images/M34.jpg', name:'Tranh Bộ Tứ', size:'M34 80cm x 28cm', price:'3,000,000đ' },
-    { img:'images/M35.jpg', name:'Tranh Nam Hương Cựu Mộng', size:'M35 2m x 1m1', price:'16,000,000đ' },
-    { img:'images/M36.jpeg', name:'Đôi Hồ Lô', size:'M36 cao 90cm', price:'9,000,000đ' },
-    { img:'images/M37.jpeg', name:'Bộ Tam Đa', size:'M37 cao 85cm', price:'40,000,000đ' },
-    { img:'images/M38.jpeg', name:'Bình Phong', size:'M38 cao 2m x 2m', price:'20,000,000đ' },
-    { img:'images/M40.jpg', name:'Hút Lộc Gà', size:'M40 cao 52cm', price:'3,500,000đ' },
-    { img:'images/M41.jpg', name:'Đôi Bình Sơn Thủy', size:'M41 cao 52cm', price:'4,500,000đ' },
-    { img:'images/M42.jpg', name:'Đôi Trụ', size:'M42 cao 2m2', price:'20,000,000đ' },
-    { img:'images/M43.jpg', name:'Thần Trà', size:'M43 cao 80cm x 70cm', price:'25,000,000đ' },
-    { img:'images/44.jpg', name:'Bình Rồng', size:'M44 cao 50cm', price:'5,500,000đ' },
-    { img:'images/M45.jpg', name:'Chóe Tam Đa', size:'M45 cao 72cm', price:'10,500,000đ' }
-  ];
+const productsURL = 'https://raw.githubusercontent.com/dinhvanthu405-glitch/Web/refs/heads/main/products.json'; // link raw GitHub
+let productsData = [];
 
-  const container = document.querySelector('.product-grid');
+// Load sản phẩm từ GitHub JSON
+async function loadProducts(){
+  try {
+    const res = await fetch(productsURL);
+    productsData = await res.json();
+    renderProducts(productsData);
+  } catch(e) {
+    console.error('Không tải được sản phẩm:', e);
+    productsData = [];
+  }
+}
 
-  products.forEach(product => {
-    const card = document.createElement('div');
-    card.className = 'product-card';
-    card.innerHTML = `
-      <img src="${product.img}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>Kích thước: ${product.size}</p>
-      <p class="price">Giá: ${product.price}</p>
-      <a href="tel:0816658163" class="buy-button">📞 Gọi ngay</a>
+// Render sản phẩm
+function renderProducts(list){
+  const productList = document.getElementById('product-list');
+  productList.innerHTML='';
+  list.forEach(p=>{
+    const div=document.createElement('div');
+    div.className='product';
+    div.dataset.category=p.category;
+    div.innerHTML=`
+      <img src="${p.img}">
+      <div class="size">${p.size}</div>
+      <a href="tel:0816658163" class="contact">Liên hệ</a>
     `;
-    container.appendChild(card);
+    productList.appendChild(div);
   });
+}
 
-  // Shadow header khi scroll
-  const header = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 20){ header.classList.add('scrolled'); }
-    else{ header.classList.remove('scrolled'); }
-  });
+// Filter sản phẩm
+function filterProducts(category, btn){
+  document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = category==='all'?productsData:productsData.filter(p=>p.category===category);
+  renderProducts(filtered);
+}
+
+// Load sản phẩm khi mở web
+loadProducts();
 </script>
 
 </body>
